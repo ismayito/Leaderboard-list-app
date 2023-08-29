@@ -1,0 +1,67 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  box-shadow: 2px 4px 2px #000;
+}
+
+.container {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.score-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.score-list {
+  width: 100%;
+}
+
+.score-form {
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  padding: 4px;
+}
+
+.score-list-items {
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.list li {
+  list-style: none;
+  padding: 2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-btn {
+  align-items: right;
+  width: fit-content;
+}
+
+.list li:nth-child(even) {
+  background: #8080801c;
+}
