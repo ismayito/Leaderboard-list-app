@@ -14,10 +14,12 @@
         <section class="score-list">
           <section class="score-header">
             <h2 class="score-title">Recent scores</h2>
-            <button type="button" class="btn-refresh">Refresh</button>
+            <button type="button" class="btn-refresh" id="btn-refresh">
+              Refresh
+            </button>
           </section>
-          <section class="score-list-items">
-            <ul class="list">
+          <section class="score-list-items" id="list-container">
+            <ul class="list" id="list-id">
               <li>name:123</li>
               <li>name:133</li>
               <li>name:163</li>
@@ -27,11 +29,40 @@
           </section>
         </section>
         <section class="score-form">
+          <form class="start-form" id="start-form">
+            <h2>Enter a game of your choice to get started</h2>
+            <input
+              name="start-game"
+              type="text"
+              class="start-game"
+              placeholder="Enter start game"
+            />
+            <button class="start-btn" id="start-btn" type="submit">
+              submit
+            </button>
+          </form>
           <section class="form-input">
             <h2 class="form-title">Add your score</h2>
-            <form action="" class="form">
-              <input type="text" placeholder="your name" class="name" />
-              <input type="text" placeholder="your score" class="score" />
+            <form
+              action="https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/"
+              class="form"
+              method="POST"
+              id="form"
+            >
+              <input
+                type="text"
+                id="name-input"
+                name="name"
+                placeholder="Enter your name"
+                class="name"
+              />
+              <input
+                type="text"
+                id="score"
+                name="score"
+                placeholder="Enter your score"
+                class="score"
+              />
               <div class="btn">
                 <button type="submit" class="submit-btn">submit</button>
               </div>

@@ -46,6 +46,14 @@ button {
   padding: 2px;
 }
 
+.start-form {
+  /* display: none; */
+}
+
+.form-input {
+  /* display: none; */
+}
+
 .form {
   display: flex;
   flex-direction: column;
