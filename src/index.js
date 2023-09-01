@@ -3,9 +3,12 @@ import addScore from './modules/addScore.js';
 import createId from './modules/createId.js';
 import refresh from './modules/refresh.js';
 
+refresh();
+
 const formStart = document.getElementById('start-form');
 const form = document.getElementById('form');
 const refreshBtn = document.getElementById('btn-refresh');
+const listContainer = document.getElementById('list-container');
 
 document.addEventListener('DOMContentLoaded', () => {
   if (formStart) {
@@ -24,17 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   form.addEventListener('submit', (e) => {
-    const nameInput = document.getElementById('name-input').value.trim();
-    const scoreInput = document.getElementById('score').value.trim();
+    const nameInput = document.getElementById('name-input').value;
+    const scoreInput = document.getElementById('score').value;
 
-    const userObject = { name: nameInput, score: scoreInput };
+    const userObject = { user: nameInput, score: scoreInput };
     e.preventDefault();
     addScore(userObject);
     form.reset();
   });
+});
 
-  // refresh button
-  refreshBtn.addEventListener('click', () => {
-    refresh();
-  });
+refreshBtn.addEventListener('click', () => {
+  refresh();
+  listContainer.style.display = 'block';
 });

@@ -2,7 +2,7 @@ import displayListUI from './displayListUI.js';
 
 const refresh = async () => {
   const id = localStorage.getItem('gameId');
-
+  const refreshBtn = document.getElementById('btn-refresh');
   const list = document.getElementById('list-id');
 
   const data = await fetch(
@@ -10,9 +10,10 @@ const refresh = async () => {
   );
 
   const response = await data.json();
-  list.innerHTML = '';
-  displayListUI(response.result);
-
+  refreshBtn.addEventListener('click', () => {
+    list.innerHTML = '';
+    displayListUI(response.result);
+  });
   return response;
 };
 
