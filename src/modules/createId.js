@@ -10,10 +10,9 @@ const createId = async () => {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-      }
+      },
     );
     const returnedData = await result.json();
-    console.log(returnedData);
     return returnedData;
   } catch (e) {
     return e.message;

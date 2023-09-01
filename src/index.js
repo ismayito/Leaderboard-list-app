@@ -5,8 +5,7 @@ import refresh from './modules/refresh.js';
 
 const formStart = document.getElementById('start-form');
 const form = document.getElementById('form');
-
-refresh();
+const refreshBtn = document.getElementById('btn-refresh');
 
 document.addEventListener('DOMContentLoaded', () => {
   if (formStart) {
@@ -29,9 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreInput = document.getElementById('score').value.trim();
 
     const userObject = { name: nameInput, score: scoreInput };
-    console.log(userObject);
     e.preventDefault();
     addScore(userObject);
     form.reset();
+  });
+
+  // refresh button
+  refreshBtn.addEventListener('click', () => {
+    refresh();
   });
 });

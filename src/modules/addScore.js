@@ -11,10 +11,8 @@ const addScore = async (userObject) => {
         },
         method: 'POST',
         body: JSON.stringify(userObject),
-      }
+      },
     );
-    console.log(userObject);
-    console.log(await data.json());
     return await data.json();
   } catch (e) {
     return e.message;
